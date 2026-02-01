@@ -1,0 +1,70 @@
+sap.hanavesre@gmail.com/Ani@dyp12aAni@dyp
+ID: hanaverse
+Repo: sapbtp
+
+aniket.contactme@gmail.com (login with gmail)
+ID: Aniket558
+Repo: sapbsis
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Global Configuration on local system:
+Generally, in a project multiple Developers push the changes from local to central repository and hence its important to have a identity for every developer so that we can track which Developer is making what change at central repository level and hence, these configurations.
+git init (Creates master branch with name “main” if you want to give specific name use below)
+
+git config --global user.name "SAP HANAVERSE"
+git config --global user.email “sap.hanaverse@gmail.com”
+git config --global code.editor "code --wait"
+git config list
+--------------------------------------------------------------------------------------------------------------------------------------
+Basic Operations:
+git init : This command is required to init GIT repository locally (creates ./git folder)
+git init -b “main1” : This command is required to init GIT repository locally (creates ./git folder) and also creates branch wiht name "main1" insted on default name "main"
+git status
+
+git add <file1> <file2> (add file to staging area)
+git add . (commit all the files form work directory to the staging in one shot)
+git remove - - cached <file1> (remove file from staging)
+
+git log
+git log -- oneline (short log – only one line per commit)
+
+git commit -m “commit message”
+git commit -a -m "message" (commit to local directory directly from WD without staging, this only works for tracked files/modified files – newly created files must be added/staged before we can commit them)
+git show <CommitID>
+--------------------------------------------------------------------------------------------------------------------------------------
+Commands to compare files with their committed versions.
+git diff file (file is in work area and compared with latest committed version)
+git diff --staged file (file is in staging and compared with latest committed)
+git diff commit# commit# (Two committed versions of files are compared)
+--------------------------------------------------------------------------------------------------------------------------------------
+Branch Operations:
+git branch – show branches in the repository and header location (you are in which branch)
+git branch feature1 – create 
+git switch feature1 - switch (Note: Switch and checkout dose the same thing, switch is available in latest version.)
+git checkout feature1 - switch
+git branch checkout -b “abc” - create and switch
+git branch switch -c “abc” - create and switch
+git branch -d “abc” – delete
+git branch -m <oldname> <newname> - Rename
+get merge feature1 // Merge feature1 branch chnages with main
+--------------------------------------------------------------------------------------------------------------------------------------
+Clone/Push/Pull from Central repository:
+
+git remote add origin <HTTP/SSH>
+git remote -v // to check origin
+git clone <HTTP/SSH>  (for clone we do not require to setup remote reference - origin, if you see the command we are not using origin)
+git pull origin main  // check where origin is pointing, for push command better to use SSH (share secret with remote GH account) , as HTTP will ask you login creds.
+ssh-keygen -t ed25519 -C "sap.hanaverse@gmail.com" -f ~/.ssh/id_rsa_<second>
+git push origin branch1
+git push origin all
+--------------------------------------------------------------------------------------------------------------------------------------
+rebase
+merge
+git revert sssss
+
+
+git stash
+git stash list
+git stash apply
+
+actions
